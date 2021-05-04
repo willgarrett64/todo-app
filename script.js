@@ -1,12 +1,17 @@
 // import {toDoList} from './toDoList.js'
 let toDoList = [
   {
-    text: "Build my to-do app.",
+    text: "Finish CSS on this app",
     active: true,
     id: 1,
   },
   {
-    text: "Fix the design. It looks crap!",
+    text: "Tidy up the code a little bit",
+    active: true,
+    id: 2,
+  },
+  {
+    text: "Use this app as a base for my first bit of backend development",
     active: true,
     id: 2,
   },
