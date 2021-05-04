@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>To Do App</title>
+</head>
+<body>
+  <h1>TO DO</h1>
+  <!--Input field and Add button for user to add new to-dos to the app-->
+  <div id="input-field">
+    <input type="text" placeholder="Create a to-do..." id="to-do-input" />
+    <button id="to-do-button">Add</button>
+  </div>
+  
+  <div id="list-container">
+    <!--Container for the to-do list, which will be filled through javascript-->
+    <div id="to-do-list">
+    </div>
+
+    <div style="display: flex; justify-content: space-around">
+      <p id="tasks-left">0 items left</p>
+      <p id="all" class="pointer active">All</p>
+      <p id="active" class="pointer">Active</p>
+      <p id="completed" class="pointer">Completed</p>
+      <p id="clear-completed" class="pointer">Clear Completed</p>
+    </div>
+  </div>
+  
+  <script src="./script.js" type="module"></script>
+</body>
+</html>
