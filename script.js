@@ -149,26 +149,26 @@ const handleCheckChange = e => {
 }
 
 
-//
-const all = document.getElementById('all');
-const active = document.getElementById('active');
-const completed = document.getElementById('completed');
 
-// update "view" 
+
+// update "view" which determines whether to review all, just completed or just active to-dos in render()
 let view = 'all';
 const setView = e => {
+  // update class so that the selected view is in bold
   all.className = 'pointer'
   active.className = 'pointer'
   completed.className = 'pointer'
   e.target.className = 'pointer active'
 
+  // update view
   view = e.target.id;
   render();
 }
 
-all.onclick = setView;
-active.onclick = setView;
-completed.onclick = setView;
+// assign setView event listener to the all, active and completed elements. 
+const all = document.getElementById('all').onclick = setView;;
+const active = document.getElementById('active').onclick = setView;
+const completed = document.getElementById('completed').onclick = setView;
 
 
 

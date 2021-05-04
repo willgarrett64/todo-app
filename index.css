@@ -1,7 +1,8 @@
 body {
   background-image: url('./Todo-app-main/images/bg-desktop-light.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
+  background-position: center;
   font-family: sans-serif;
   text-align: center;
 }
