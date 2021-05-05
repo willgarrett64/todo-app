@@ -29,8 +29,8 @@ let id = toDoList.length + 1;
 
 
 
-// create a to-do container (each to-do item sits in a container div)
-const createContainer = (id) => {
+// create a to-do container element (each to-do item sits in a container div)
+const createContainerEl = (id) => {
   const container = document.createElement('div');
   container.className = "to-do-container";
   container.id = `container ${id}`
@@ -41,8 +41,8 @@ const createContainer = (id) => {
 
   return(container)
 }
-// create a new to-do item
-const createToDo = (toDoObject) => {
+// create a new to-do element for the DOM
+const createToDoEl = (toDoObject) => {
   const toDo = document.createElement('div');
 
   toDo.className = "to-do-item";
@@ -76,28 +76,33 @@ const createToDo = (toDoObject) => {
 
   return(toDo)
 }
-
-
-
-
 // add a to-do item to the DOM
-const addToDo = (toDo, containerId) => {
+const addToDoToDom = (toDo, containerId) => {
   //first create a container, then add the to-do element as a child element
-  const newContainer = createContainer(containerId);
+  const newContainer = createContainerEl(containerId);
   newContainer.appendChild(toDo);
   
   //add new to-do to the DOM
   toDoListElement.appendChild(newContainer)
 }
-// delete a to-do from the list
+
+
+
+// add a new to-do to the toDoList array
+const addToDo = text => {
+  //create a new toDo object
+  const newToDo = { text: text, active: true, id: id };
+  //increment id so that it's never repeated
+  id++;
+  //push new object to toDoList array  
+  toDoList.push(newToDo);
+}
+// delete a single to-do from the toDoList array
 const deleteToDo = id => {
   // find corresponding to-do in toDoList and remove it
   const index = toDoList.findIndex(el => el.id == id);
   toDoList.splice(index, 1);
 }
-
-
-
 
 // event handler for adding new to-dos (clicking "Add" or hitting "Enter" key)
 const handleAddNewToDo = e => {
@@ -109,10 +114,7 @@ const handleAddNewToDo = e => {
     return;
   }
 
-  const newToDo = { text: inputVal, active: true, id: id };
-  id++;
-
-  toDoList.push(newToDo);
+  addToDo(inputVal)
   
   render()
 
@@ -123,7 +125,7 @@ btn.addEventListener('click', handleAddNewToDo)
 const input = document.getElementById('to-do-input');
 input.addEventListener('keydown', handleAddNewToDo)
 
-// event handler for deleting specific to-do
+// event handler for deleting a single to-do (by clicking on the cross "x")
 const handleDeleteToDo = e => {
   const toDo = e.target.parentElement;
   const id = toDo.id;
@@ -169,7 +171,6 @@ const setView = e => {
   view = e.target.id;
   render();
 }
-
 // assign setView event listener to the all, active and completed elements. 
 const all = document.getElementById('all');
 const active = document.getElementById('active');
@@ -203,7 +204,7 @@ const render = () => {
   // render toDisplay into the to-do list <div>
   let containerId = 1;
   toDisplay.forEach(toDo => {
-    addToDo(createToDo(toDo), containerId)
+    addToDoToDom(createToDoEl(toDo), containerId)
     containerId++;
   })
   
