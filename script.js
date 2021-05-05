@@ -171,10 +171,12 @@ const setView = e => {
 }
 
 // assign setView event listener to the all, active and completed elements. 
-const all = document.getElementById('all').onclick = setView;;
-const active = document.getElementById('active').onclick = setView;
-const completed = document.getElementById('completed').onclick = setView;
-
+const all = document.getElementById('all');
+const active = document.getElementById('active');
+const completed = document.getElementById('completed');
+all.onclick = setView;
+active.onclick = setView;
+completed.onclick = setView;
 
 
 // render all to-dos from the toDoList array
@@ -214,6 +216,5 @@ const render = () => {
   })
   tasksLeftEl.innerHTML = `${tasksLeft} items left`;
 }
-
 
 render()
