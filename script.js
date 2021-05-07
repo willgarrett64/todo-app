@@ -13,7 +13,7 @@ let toDoList = [
   {
     text: "Use this app as a base for my first bit of backend development",
     active: true,
-    id: 2,
+    id: 3,
   },
 ];
 
@@ -26,7 +26,7 @@ const tasksLeftEl = document.getElementById('tasks-left');
 
 // Start ID count on one above the amount of items in pre-existing list of to-do items
 let id = toDoList.length + 1;
-
+let containerId = 1;
 
 
 // create a to-do container element (each to-do item sits in a container div)
@@ -201,8 +201,9 @@ const render = () => {
       break;
   }
 
+  //re-set container ID to 1. This will increment for each to-ado added
+  containerId = 1; 
   // render toDisplay into the to-do list <div>
-  let containerId = 1;
   toDisplay.forEach(toDo => {
     addToDoToDom(createToDoEl(toDo), containerId)
     containerId++;
