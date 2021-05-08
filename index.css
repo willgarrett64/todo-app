@@ -1,59 +1,124 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  background-image: url('./Todo-app-main/images/bg-desktop-light.jpg');
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-position: center;
-  font-family: sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   text-align: center;
+  width: 85vw;
+  max-width: 550px;
+  margin: 0 auto;
+  background-color: lightgrey;
+}
+
+main {
+  position: relative;
+}
+
+.card {
+  border-radius: 7px;
+  background-color: white;
+}
+
+/*#region Background Image*/
+#bg-image {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+/*#endregion Background Image*/
+
+
+/*#region Header*/
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 6vh;
 }
 
 h1 {
+  text-align: left;
   color: white;
+  letter-spacing: 0.3rem;
 }
 
+#dark-mode {
+  height: 30px;
+  width: auto;
+}
+/*#endregion Header*/
 
 
+
+/*#region New To-Do Input*/
 #input-field {
-  width: 50vw;
-  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+
 }
 
-#input-field input {
-  height: 100%;
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  margin: 15px;
+  border-radius: 500px;
+  border: 1px solid rgb(234, 234, 234);
+}
+
+input[type='checkbox']:checked {
+  background-color: green;
+}
+
+
+#to-do-input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  flex-grow: 1;
 }
 
 #input-field button {
-  height: 100%;
+  height: 55px;
+  width: 55px;
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  border: none;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
 }
+/*#endregion New To-Do Input*/
+
+
+
 
 
 
 #list-container {
   background-color: white;
-  border-radius: 5px;
-  width: 50vw;
-  margin: 0 auto;
   color: rgb(70, 70, 70);
 }
 
 .to-do-item {
-  border-bottom: solid 1px grey;
+  border-bottom: solid 2px rgb(234, 234, 234);
   display: grid;
-  grid-template-columns: 40px auto 50px;
+  grid-template-columns: 55px auto 50px;
   align-content: center;
-}
-
-.to-do-item input {
-  margin: auto;
 }
 
 .to-do-item p {
   text-align: left;
+  align-self: center;
   word-wrap: normal;
 }
 
 .to-do-item img {
-  height: 20px;
+  height: 15px;
   margin: auto;
 }
 
@@ -62,7 +127,7 @@ h1 {
 
 
 
-.checked {
+.completed {
   color: grey;
   text-decoration: line-through;
 }

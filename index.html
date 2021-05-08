@@ -8,27 +8,42 @@
   <title>To Do App</title>
 </head>
 <body>
-  <h1>TO DO</h1>
-  <!--Input field and Add button for user to add new to-dos to the app-->
-  <div id="input-field">
-    <input type="text" placeholder="Create a to-do..." id="to-do-input" />
-    <button id="to-do-button">Add</button>
-  </div>
+  <img src="./Todo-app-main/images/bg-mobile-light.jpg" alt="background image" id="bg-image" />
+  <header>
+    <h1>T O D O</h1>
+    <img src="./Todo-app-main/images/icon-moon.svg" alt="moon icon for dark mode" id="dark-mode" />
+  </header>
   
-  <div id="list-container">
-    <!--Container for the to-do list, which will be filled through javascript-->
-    <div id="to-do-list">
+  
+  
+  <main>
+    <!--Input field and Add button for user to add new to-dos to the app-->
+    <div id="input-field" class="card">
+      <input type="checkbox" id="to-do-checkbox" />
+      <input type="text" placeholder="Create a to-do..." id="to-do-input" />
+      <button id="to-do-button">Add</button>
     </div>
 
-    <!--Display number of tasks left, switch between viewing all/active/completed tasks, and clear all tasks-->
-    <div style="display: flex; justify-content: space-around">
-      <p id="tasks-left"></p>
+    <!--Container for the to-do list, which will be filled through javascript-->
+    <div id="list-container" class="card">
+      <div id="to-do-list">
+      </div>
+      <!--Display number of tasks left, switch between viewing all/active/completed tasks, and clear all tasks-->
+      <div style="display: flex; justify-content: space-around">
+        <p id="tasks-left"></p>
+        
+        <p id="clear-completed" class="pointer">Clear Completed</p>
+      </div>
+    </div>
+    
+    <div class="card" id="view-select">
       <p id="all" class="view pointer active">All</p>
       <p id="active" class="view pointer">Active</p>
       <p id="completed" class="view pointer">Completed</p>
-      <p id="clear-completed" class="pointer">Clear Completed</p>
     </div>
-  </div>
+
+    <p>Drag and drop to reorder list</p>
+  </main>
   
   <script src="./script.js" type="module"></script>
 </body>

@@ -63,7 +63,7 @@ const createToDoEl = (toDoObject) => {
   const toDoText = document.createElement('p');
   toDoText.innerText = toDoObject.text;
   if (checkbox.checked) {
-    toDoText.className = 'checked'
+    toDoText.className = 'completed'
   }
   
   //create button to delete the to-d0
