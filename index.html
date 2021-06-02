@@ -18,7 +18,7 @@
   
   <main>
     <!--Input field and Add button for user to add new to-dos to the app-->
-    <div id="input-field" class="card">
+    <div id="input-field" class="card item">
       <input type="checkbox" id="to-do-checkbox" />
       <input type="text" placeholder="Create a to-do..." id="to-do-input" />
       <button id="to-do-button">Add</button>
@@ -29,14 +29,13 @@
       <div id="to-do-list">
       </div>
       <!--Display number of tasks left, switch between viewing all/active/completed tasks, and clear all tasks-->
-      <div style="display: flex; justify-content: space-around">
+      <div class="item" style="display: flex; justify-content: space-around">
         <p id="tasks-left"></p>
-        
         <p id="clear-completed" class="pointer">Clear Completed</p>
       </div>
     </div>
     
-    <div class="card" id="view-select">
+    <div id="view-select" class="card item">
       <p id="all" class="view pointer active">All</p>
       <p id="active" class="view pointer">Active</p>
       <p id="completed" class="view pointer">Completed</p>

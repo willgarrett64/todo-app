@@ -21,6 +21,13 @@ main {
   background-color: white;
 }
 
+.item {
+  height: 55px;
+  display: flex;
+  align-items: center;
+}
+
+
 /*#region Background Image*/
 #bg-image {
   width: 100%;
@@ -58,7 +65,7 @@ h1 {
 #input-field {
   display: flex;
   justify-content: space-between;
-
+  margin-top: 50px;
 }
 
 input[type='checkbox'] {
@@ -73,7 +80,6 @@ input[type='checkbox'] {
 input[type='checkbox']:checked {
   background-color: green;
 }
-
 
 #to-do-input {
   margin: 0;
@@ -96,10 +102,20 @@ input[type='checkbox']:checked {
 
 
 
+/*#region View Selecter*/
+#view-select {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
 
-
+#view-select p {
+  margin: 0 15px;
+}
+/*#endregion View Selecter*/
 
 #list-container {
+  margin: 20px auto;
   background-color: white;
   color: rgb(70, 70, 70);
 }
@@ -108,7 +124,6 @@ input[type='checkbox']:checked {
   border-bottom: solid 2px rgb(234, 234, 234);
   display: grid;
   grid-template-columns: 55px auto 50px;
-  align-content: center;
 }
 
 .to-do-item p {
