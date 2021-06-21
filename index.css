@@ -9,7 +9,9 @@ body {
   width: 85vw;
   max-width: 550px;
   margin: 0 auto;
-  background-color: lightgrey;
+  background-color: rgb(243, 243, 243);
+  color: grey;
+  font-weight: 600;
 }
 
 main {
@@ -60,7 +62,6 @@ h1 {
 /*#endregion Header*/
 
 
-
 /*#region New To-Do Input*/
 #input-field {
   display: flex;
@@ -91,15 +92,15 @@ input[type='checkbox']:checked {
 #input-field button {
   height: 55px;
   width: 55px;
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
   font-weight: bold;
   border: none;
   border-top-right-radius: 7px;
+  border-left: solid 2px grey;
   border-bottom-right-radius: 7px;
 }
 /*#endregion New To-Do Input*/
-
 
 
 /*#region View Selecter*/
@@ -111,13 +112,14 @@ input[type='checkbox']:checked {
 
 #view-select p {
   margin: 0 15px;
+  font-size: 1.1rem;
 }
 /*#endregion View Selecter*/
+
 
 #list-container {
   margin: 20px auto;
   background-color: white;
-  color: rgb(70, 70, 70);
 }
 
 .to-do-item {
@@ -138,12 +140,16 @@ input[type='checkbox']:checked {
 }
 
 
-
-
+#bottom-row {
+  justify-content: space-between !important;
+  margin: 0 15px;
+  color: rgb(185, 184, 184);
+}
 
 
 .completed {
-  color: grey;
+  color: rgb(185, 184, 184);
+  font-weight: 400;
   text-decoration: line-through;
 }
 
@@ -153,4 +159,5 @@ input[type='checkbox']:checked {
 }
 .active {
   font-weight: bold;
+  color: darkcyan;
 }
